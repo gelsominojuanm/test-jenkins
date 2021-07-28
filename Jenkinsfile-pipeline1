@@ -1,0 +1,20 @@
+pipeline {
+  agent {
+   label "nodejs"
+  }
+  stages {
+   stage ('Validate configuration resources') {
+    steps {
+	
+    }
+   }
+   stage ('Apply resources') {
+    steps {
+    }
+   }
+   stage ('Verify test user') {
+    steps {  
+    }
+   }
+  }
+}
