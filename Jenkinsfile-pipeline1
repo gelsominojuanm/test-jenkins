@@ -5,15 +5,17 @@ pipeline {
   stages {
    stage ('Validate configuration resources') {
     steps {
-	
+      sh 'oc apply --dry--run --validate -f ns-test.yaml'
     }
    }
    stage ('Apply resources') {
     steps {
+      sh 'oc apply -f ns-test.yaml'
     }
    }
    stage ('Verify test user') {
-    steps {  
+    steps {
+      sh 'oc get project | grep test || true'  
     }
    }
   }
